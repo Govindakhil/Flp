@@ -1,0 +1,32 @@
+<div class="nav navbar" style="background-color: cornflowerblue">
+    <div>
+        <h1 style="color: white;text-align: center">Cart</h1>
+    </div>
+    <div class="nav navbar-nav" style="background-color: lightblue">
+       <button type="submit" class="btn btn-warning" routerLink="/homepage" routerLinkActive="active" style="align-content: center">Shop More</button>
+    </div>
+</div>
+<br> 
+<div class="container">
+    <table class="table" border="1" style="align-content: center">
+        <tr>
+            <th>Cart ID</th>
+            <th>Product ID</th>
+            <th>Customer ID</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor='let cart of cartlist'>
+            <td>{{cart.cartId}}</td>
+            <td>{{cart.productId}}</td>
+            <td>{{cart.customerId}}</td>
+            <td>{{cart.quantity}}</td>
+            <td>{{cart.price}}</td>
+            <td><button class="btn btn-danger" (click)='deleteProduct(cart.cartId)'>Remove</button></td>
+        </tr>
+    </table>
+    <div style="text-align:end "> 
+    <input type="submit" class="btn btn-primary" value="Place Order" routerLink="/placeorder" >
+    </div>
+</div>
